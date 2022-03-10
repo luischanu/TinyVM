@@ -22,6 +22,7 @@
   * [Virtual Hardware](#virtual-hardware)
   * [VM Options](#vm-options)
   * [Software](#software)
+* [Version History](#version-history)
 * [Credits](#credits)
 
 
@@ -37,7 +38,7 @@ As part of the VM power-on process, it also automatically starts an iPerf3 serve
 
 Here is an example of the web page that TinyVM generates:
 <p align="center">
-<img src="images/TinyVM-Web-Page.png">
+<img src="misc/TinyVM-Web-Page.png">
 </p>
 
 # VM Details
@@ -87,9 +88,19 @@ TinyVM was built with the following software:
  * [Open-VM-Tools](https://github.com/vmware/open-vm-tools)
  * [OpenSSH](https://www.openssh.com/)
  * [Busybox-httpd](https://www.busybox.net/)
+ * [TCPDump](https://www.tcpdump.org/)
  * [iPerf3](https://iperf.fr/)
  * [curl](https://curl.se/)
  * [wget](https://www.gnu.org/software/wget/)
+
+
+# Version History
+
+| Date | Revision | Revisions / Changes |
+|------|----------|---------------------|
+| N/A | 1.0 | Internal testing - Never released |
+| N/A | 1.1 | Internal testing - Never released |
+| 9-MAR-2022 | 1.2 | Initial Release |
 
 
 # Credits
