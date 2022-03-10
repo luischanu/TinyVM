@@ -22,6 +22,7 @@
   * [Virtual Hardware](#virtual-hardware)
   * [VM Options](#vm-options)
   * [Software](#software)
+* [TinyVM Download](#tinyvm-download)
 * [Version History](#version-history)
 * [Credits](#credits)
 
@@ -94,13 +95,18 @@ TinyVM was built with the following software:
  * [wget](https://www.gnu.org/software/wget/)
 
 
+# TinyVM Download
+
+TinyVM.ova can be downloaded from the ```images``` directory of this Github project.  Or, you can just click [HERE](images/TinyVM.ova).
+
+
 # Version History
 
 | Date | Revision | Revisions / Changes |
 |------|----------|---------------------|
 | N/A | 1.0 | Internal testing - Never released |
 | N/A | 1.1 | Internal testing - Never released |
-| 9-MAR-2022 | 1.2 | Initial Release |
+| 10-MAR-2022 | 1.2 | Initial public release of TinyVM |
 
 
 # Credits
