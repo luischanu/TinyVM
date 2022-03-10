@@ -79,7 +79,7 @@ TinyVM is provisioned with the following VM Options:
 | VM Option        | Setting/Configuration                    | Notes/Comments |
 |------------------|------------------------------------------|----------------|
 | Guest OS Family  | Linux                                    | |
-| Guest OS Vesrion | Other 3.x or later Linux (32-bit)        | |
+| Guest OS Version | Other 3.x or later Linux (32-bit)        | |
 
 
 ## Software
