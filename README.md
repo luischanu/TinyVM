@@ -97,7 +97,7 @@ TinyVM was built with the following software:
 
 # TinyVM Download
 
-TinyVM.ova can be downloaded from the ```images``` directory, or you can just click [HERE](https://github.com/luischanu/TinyVM/raw/main/images/TinyVM.ova).
+TinyVM.ova can be downloaded from the ```images``` directory, or you can simply click [HERE](https://github.com/luischanu/TinyVM/raw/main/images/TinyVM.ova).
 
 
 # Version History
