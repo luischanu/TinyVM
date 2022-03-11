@@ -107,6 +107,8 @@ TinyVM.ova can be downloaded from the ```images``` directory, or you can simply 
 | N/A | 1.0 | Internal testing - Never released |
 | N/A | 1.1 | Internal testing - Never released |
 | 10-MAR-2022 | 1.2 | Initial public release of TinyVM |
+| 11-MAR-2022 | 1.3 | Upon login, the IPv4 address is how displayed |
+
 
 
 # Credits
