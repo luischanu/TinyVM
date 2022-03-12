@@ -22,6 +22,8 @@
   * [Virtual Hardware](#virtual-hardware)
   * [VM Options](#vm-options)
   * [Software](#software)
+* [Product Features](#product-features)
+  * [Static IPv4 Address Configuration](#static-ipv4-address-configuration)
 * [TinyVM Download](#tinyvm-download)
 * [Version History](#version-history)
 * [Credits](#credits)
@@ -95,6 +97,42 @@ TinyVM was built with the following software:
  * [wget](https://www.gnu.org/software/wget/)
 
 
+# Product Features
+
+## Static IPv4 Address Configuration
+
+By default, TinyVM obtains it's IPv4 address via DHCP.  However, starting with TinyVM v1.4, you can now assign a static IPv4 address to TinyVM.  Should you assign a static IPv4 address to TinyVM, and later decide you want to revert it back to using DHCP, you will need to redeploy it from the OVA file as there is no "undo" to this feature.  Please note that you can assign the static IPv4 address either from the console, or via a SSH session.
+
+To assign an IPv4 address to TinyVM, follow these steps:
+
+1. Deploy TinyVM from the OVA file.
+2. Login to TinyVM from either the console or via a SSH session.
+3. To assign the static IPv4 address, run the following command:
+```
+sudo /opt/set-ip-address.sh <IPv4Address> <SubnetMask> <BroadcastAddress> <DefaultGateway> <DNSServer> <DNSDomain>
+
+  where:
+      <IPv4Address>.......is the static IPv4 address to set the eth0 interface to
+      <SubnetMask>........is the subnet mask in dot decimal notation (i.e. 255.255.255.0)
+      <BroadcastAddress>..is the IPv4 subnet broadcast address
+      <DefaultGateway>....is the IPv4 gateway that should be used for all off-net destinations
+      <DNSServer>.........is the IPv4 address of the DNS server to use to resolve names
+      <DNSDomain>.........is the default DNS search domain to use
+
+You can also get help on the above command by entering just the command without any arguments.
+```
+4. Once the static IPv4 address is applied, you will see a message indicating that ```TinyVM WILL RESTART IN 5 SECONDS```, at which point TinyVM will restart.
+
+5. TinyVM is now configured to use a static IPv4 address.  This address will be persistent, and survive across reboots/restarts.
+
+6. One other enhancement made to TinyVM v1.4 is that the startup screen now indicates the method by which the IPv4 has been assigned: DHCP or static.  The table below indicates the startup message for each method.
+
+| IPv4 Obtained Via | Startup Message Will State |
+|:------------:|-----------------|
+| DHCP | Your DHCP IPv4 address is: 10.20.30.100 |
+| Static | Your static IPv4 address is: 10.20.30.100 |
+
+
 # TinyVM Download
 
 TinyVM.ova can be downloaded from the ```images``` directory, or you can simply click [HERE](https://github.com/luischanu/TinyVM/raw/main/images/TinyVM.ova).
@@ -108,6 +146,7 @@ TinyVM.ova can be downloaded from the ```images``` directory, or you can simply 
 | N/A | 1.1 | Internal testing - Never released |
 | 10-MAR-2022 | 1.2 | Initial public release of TinyVM |
 | 11-MAR-2022 | 1.3 | Upon login, the IPv4 address is how displayed |
+| 12-MAR-2022 | 1.4 | Added static IP configuration support |
 
 
 
