@@ -136,9 +136,9 @@ You can also get help on the above command by entering just the command without 
 
 # TinyVM Download
 
-TinyVM.ova can be downloaded from the ```images``` directory, or you can simply click [HERE](https://github.com/luischanu/TinyVM/raw/main/images/TinyVM.ova).
+TinyVM.ova can be found in the ```images``` directory.
 
-If you do not see an OVA in the ```images``` directory, then you are in a develpment branch, and the OVA is not yet available.  Please look at a previous branch version for a released OVA.
+If you do not see an ```images``` directory, then you are in a develpment branch, and the OVA is not yet available.  Please look at a previous branch version for a released OVA.
 
 
 # Version History
