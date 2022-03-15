@@ -66,8 +66,8 @@ TinyVM is provisioned with the following Virtual Hardware configuration:
 | Virtual Hardware | Setting/Configuration                    | Notes/Comments |
 |------------------|------------------------------------------|-------------------------------------------------------------------|
 | CPU              | 1                                        | Enabled "Expose hardware assisted virtualization to the guest OS" |
-| Memory           | 172 MB                                   | |
-| Hard Disk        | 48 MB                                    | Using IDE(0:0) |
+| Memory           | 192 MB                                   | |
+| Hard Disk        | 80 MB                                    | Using IDE(0:0) |
 | Network Adapter  | Connect To DHCP Enabled Network Segment  | Adapter Type: VMXNET3 |
 | CD/DVD Drive     | Client Device                            | Using IDE(0:1) |
 | SCSI Controller  | *** DELETED ***                          | |
@@ -88,6 +88,7 @@ TinyVM is provisioned with the following VM Options:
 
 TinyVM was built with the following software:
  * [Tiny Core Linux version 13.0 (Core)](http://www.tinycorelinux.net/)
+ * [IPv6 NetFilter](https://www.netfilter.org/) (Provides IPv6 support)
  * [Open-VM-Tools](https://github.com/vmware/open-vm-tools)
  * [OpenSSH](https://www.openssh.com/)
  * [Busybox-httpd](https://www.busybox.net/)
@@ -101,7 +102,7 @@ TinyVM was built with the following software:
 
 ## Static IPv4 Address Configuration
 
-By default, TinyVM obtains it's IPv4 address via DHCP.  However, starting with TinyVM v1.4, you can now assign a static IPv4 address to TinyVM.  Should you assign a static IPv4 address to TinyVM, and later decide you want to revert it back to using DHCP, you will need to redeploy it from the OVA file as there is no "undo" to this feature.  Please note that you can assign the static IPv4 address either from the console, or via a SSH session.
+By default, TinyVM obtains it's IPv4 address via DHCPv4.  However, you can now assign a static IPv4 address to TinyVM.  Should you assign a static IPv4 address to TinyVM, and later decide you want to revert it back to using DHCPv4, you will need to redeploy it from the OVA file as there is no "undo" to this feature.  Please note that you can assign the static IPv4 address either from the console, or via a SSH session.
 
 To assign an IPv4 address to TinyVM, follow these steps:
 
@@ -109,7 +110,7 @@ To assign an IPv4 address to TinyVM, follow these steps:
 2. Login to TinyVM from either the console or via a SSH session.
 3. To assign the static IPv4 address, run the following command:
 ```
-sudo /opt/set-ip-address.sh <IPv4Address> <SubnetMask> <BroadcastAddress> <DefaultGateway> <DNSServer> <DNSDomain>
+sudo /opt/set-ipv4-address.sh <IPv4Address> <SubnetMask> <BroadcastAddress> <DefaultGateway> <DNSServer> <DNSDomain>
 
   where:
       <IPv4Address>.......is the static IPv4 address to set the eth0 interface to
@@ -137,17 +138,34 @@ You can also get help on the above command by entering just the command without 
 
 TinyVM.ova can be downloaded from the ```images``` directory, or you can simply click [HERE](https://github.com/luischanu/TinyVM/raw/main/images/TinyVM.ova).
 
+If you do not see an OVA in the ```images``` directory, then you are in a develpment branch, and the OVA is not yet available.  Please look at a previous branch version for a released OVA.
+
 
 # Version History
 
-| Date | Revision | Revisions / Changes |
-|------|----------|---------------------|
-| N/A | 1.0 | Internal testing - Never released |
-| N/A | 1.1 | Internal testing - Never released |
-| 10-MAR-2022 | 1.2 | Initial public release of TinyVM |
-| 11-MAR-2022 | 1.3 | Upon login, the IPv4 address is how displayed |
-| 12-MAR-2022 | 1.4 | Added static IPv4 configuration support |
+## Version 1.0
+* Internal testing
+* Never released to the public
 
+## Version 1.1
+* Internal testing
+* Never released to the public
+
+## Version 1.2
+* Released 10-MAR-2022
+* Intial public release of TinyVM
+
+## Version 1.3
+* Released 11-MAR-2022
+* Added login banner to display IPv4 address
+
+## Version 1.4
+* Released 12-MAR-2022
+* Added the ability to statically assign IPv4 address to TinyVM
+* Modified login banner indicate if the IPv4 address is assigned via DHCP or static
+
+## Version 1.5
+* Currently in development...
 
 
 # Credits
