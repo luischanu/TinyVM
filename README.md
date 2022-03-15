@@ -133,6 +133,9 @@ You can also get help on the above command by entering just the command without 
 | DHCP | Your DHCP IPv4 address is: 10.20.30.100 |
 | Static | Your static IPv4 address is: 10.20.30.100 |
 
+## IPv6 Support
+IPv6 support in TinyVM is limited at the moment.  Although IPv6 is enabled in the OS, and thus available for command-line utiliies which support IPv6, it's not supported by the web server we use.  Thus, you must continue to use IPv4 to reach the web server until this is addressed.
+
 
 # TinyVM Download
 
@@ -166,6 +169,7 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 
 ## Version 1.5
 * Currently in development...
+* Had to increase the provisioned resources of the VM to support additional features.
 
 
 # Credits
