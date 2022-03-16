@@ -134,7 +134,7 @@ You can also get help on the above command by entering just the command without 
 | Static | Your static IPv4 address is: 10.20.30.100 |
 
 ## IPv6 Support
-IPv6 support in TinyVM is limited at the moment.  Although IPv6 is enabled in the OS, and thereby available for command-line utiliies which support IPv6, it's not supported by the web server we use.  Thus, you must continue to use IPv4 to reach the web server until this is addressed.
+IPv6 support in TinyVM is limited at the moment.  Although IPv6 is enabled in the OS, and thereby available for command-line utilities which support IPv6, it's not supported by the web server we use.  Thus, you must continue to use IPv4 to reach the web server until this is addressed.
 
 
 # TinyVM Download
