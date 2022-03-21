@@ -41,7 +41,7 @@ As part of the VM power-on process, it also automatically starts an iPerf3 serve
 
 Here is an example of the web page that TinyVM generates:
 <p align="center">
-<img src="misc/TinyVM-Web-Page.png">
+<img src="screenshots/TinyVM-Web-Page.png">
 </p>
 
 # VM Details
