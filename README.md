@@ -179,6 +179,13 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Ran into issue where IPv6 addresses were taking a while to register with the OS, so needed to add some delays.  Thus, you may notice a small delay when logging into the VM due to additional delay that was added to ensure IPv6 has time to be noticed by the OS.
 * Due to same IPv6 issues, had to introduce delay for startup of the web server.  Thus, after the VM starts, the website will not be available for a minute (or so) while we allow IPv6 to be fully installed and ready for use.
 
+## Version 2.0 - Nothing below is committed to yet
+* Under Development
+* Changed web server from Busybox-httpd to Nginx
+* Web page converted from a static page to dynamic page that is updatd with each request
+* Enabled dual-stack (IPv4 and IPv6) support on website
+* Created new web page to provide more granular information about the client request
+
 
 # Credits
 While searching for other similar VMs, [Luis Chanu](https://www.linkedin.com/in/luischanu/) came across a couple of articles that inspired him and gave him some ideas, so he thought he would mention them here.  So, a big thank you goes out to the following people for their articles:
