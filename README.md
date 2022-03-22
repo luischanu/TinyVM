@@ -11,7 +11,8 @@
                         |  ######/                        
                          \______/                         
 
-                *** DEVELOPMENT BRANCH ***
+                        Version 2.0
+
 ```
 
 
@@ -92,9 +93,11 @@ TinyVM was built with the following software:
  * [IPv6 NetFilter](https://www.netfilter.org/) (Provides IPv6 support)
  * [Open-VM-Tools](https://github.com/vmware/open-vm-tools)
  * [OpenSSH](https://www.openssh.com/)
- * [Busybox-httpd](https://www.busybox.net/)
  * [TCPDump](https://www.tcpdump.org/)
+ * [NGINX](https://www.nginx.com/)
  * [iPerf3](https://iperf.fr/)
+ * [pcre2](https://www.pcre.org/) (Required by PHP-FPM)
+ * [pcre](https://www.pcre.org/) (Required by Open VM Tools)
  * [curl](https://curl.se/)
  * [wget](https://www.gnu.org/software/wget/)
 
@@ -135,7 +138,7 @@ You can also get help on the above command by entering just the command without 
 | Static | Your static IPv4 address is: 10.20.30.100 |
 
 ## IPv6 Support
-IPv6 support in TinyVM is limited at the moment.  Although IPv6 is enabled in the OS, and thereby available for command-line utilities which support IPv6, it's not supported by the web server we use.  Thus, you must continue to use IPv4 to reach the web server until this is addressed.
+TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol version.
 
 
 # TinyVM Download
@@ -179,12 +182,20 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Ran into issue where IPv6 addresses were taking a while to register with the OS, so needed to add some delays.  Thus, you may notice a small delay when logging into the VM due to additional delay that was added to ensure IPv6 has time to be noticed by the OS.
 * Due to same IPv6 issues, had to introduce delay for startup of the web server.  Thus, after the VM starts, the website will not be available for a minute (or so) while we allow IPv6 to be fully installed and ready for use.
 
-## Version 2.0 - Nothing below is committed to yet
+## Version 2.0
 * Under Development
 * Changed web server from Busybox-httpd to Nginx
-* Web page converted from a static page to dynamic page that is updatd with each request
-* Enabled dual-stack (IPv4 and IPv6) support on website
-* Created new web page to provide more granular information about the client request
+* Enabled dual-stack (IPv4 and IPv6) support on the website
+* Web page converted from a static page to a PHP dynamic page that is updated with each request
+* Added various session specific information to the web page, including:
+  * Client Port
+  * X-Forwarded-For
+  * Server Port
+  * Server Protocol
+  * HTTP Method
+  * Host Header
+  * Requested URI
+  * Current Time (GMT)
 
 
 # Credits
