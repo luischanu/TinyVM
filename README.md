@@ -106,7 +106,7 @@ TinyVM was built with the following software:
 
 ## Static IPv4 Address Configuration
 
-By default, TinyVM obtains it's IPv4 address via DHCPv4.  However, you can now assign a static IPv4 address to TinyVM.  Should you assign a static IPv4 address to TinyVM, and later decide you want to revert it back to using DHCPv4, you will need to redeploy it from the OVA file as there is no "undo" to this feature.  Please note that you can assign the static IPv4 address either from the console, or via a SSH session.
+By default, TinyVM obtains it's IPv4 address via DHCPv4.  However, you can now assign a static IPv4 address to TinyVM.  Should you assign a static IPv4 address to TinyVM, and later decide you want to revert it back to using DHCPv4, you will need to redeploy it from the OVA file as there is no "undo" to this feature.
 
 To assign an IPv4 address to TinyVM, follow these steps:
 
@@ -184,10 +184,10 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 
 ## Version 2.0
 * Under Development
-* Changed web server from Busybox-httpd to Nginx
+* Changed web server from Busybox-httpd to NGINX
 * Enabled dual-stack (IPv4 and IPv6) support on the website
 * Web page converted from a static page to a PHP dynamic page that is updated with each request
-* Added various session specific information to the web page, including:
+* Added various web session specific information to the web page, including:
   * Client Port
   * X-Forwarded-For
   * Server Port
