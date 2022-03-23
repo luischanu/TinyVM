@@ -183,8 +183,8 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Due to same IPv6 issues, had to introduce delay for startup of the web server.  Thus, after the VM starts, the website will not be available for a minute (or so) while we allow IPv6 to be fully installed and ready for use.
 
 ## Version 2.0
-* Under Development
-* Changed web server from Busybox-httpd to NGINX
+* Released 22-MAR-2022
+* Replaced Busybox-httpd web server with NGINX
 * Enabled dual-stack (IPv4 and IPv6) support on the website
 * Web page converted from a static page to a PHP dynamic page that is updated with each request
 * Added various web session specific information to the web page, including:
