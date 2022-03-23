@@ -73,7 +73,7 @@ TinyVM is provisioned with the following Virtual Hardware configuration:
 | Network Adapter  | Connect To DHCP Enabled Network Segment  | Adapter Type: VMXNET3 |
 | CD/DVD Drive     | Client Device                            | Using IDE(0:1) |
 | SCSI Controller  | *** DELETED ***                          | |
-| Compatibility    | ESXi 5.5 and later (VM Hardware version 10) | This permits it to be imported into just about any environment |
+| Compatibility    | ESXi 5.5 and later (VM Hardware version 10) | This allows TinyVM to be deployed in just about any environment |
 
 
 ## VM Options
