@@ -185,7 +185,7 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 ## Version 2.0
 * Released 22-MAR-2022
 * Replaced Busybox-httpd web server with NGINX
-* Enabled dual-stack (IPv4 and IPv6) support on the website
+* Enabled full dual-stack (IPv4 and IPv6) support
 * Web page converted from a static page to a PHP dynamic page that is updated with each request
 * Added various web session specific information to the web page, including:
   * Client Port
