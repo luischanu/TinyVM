@@ -34,7 +34,7 @@
 # Description
 TinyVM was born out of a desire by [Luis Chanu](https://www.linkedin.com/in/luischanu/) to have a portable VM with a small resource footprint that could be used to easily test/verify load balancing and assist in basic network bandwidth testing using [iPerf3](https://iperf.fr/).  Additionally, as a co-developer of [SDDC.Lab](https://github.com/rutgerblom/SDDC.Lab), Luis thought TinyVM could serve to demonstrate the WorkloadVM functionality that he added to that project.
 
-TinyVM is based on [Tiny Core Linux](http://www.tinycorelinux.net/), and obtains its IPv4 address via DHCP.  It includes a http web server that displays its IP and MAC addresses on a web page that has a border color that is randomly chosen at each VM startup.  This random color helps aid the user's identification of the various VMs when load balance testing is being performed.
+TinyVM is based on [Tiny Core Linux](http://www.tinycorelinux.net/), and obtains its IPv4 address via DHCP.  It includes a http web server that displays connection oriented information on it's web page that has a border color that is randomly updated with each request (which is a change from earlier versions).  This random color helps aid the user's identification of the various VMs when load balance testing is being performed.
 
 As part of the VM power-on process, it also automatically starts an iPerf3 server, which iPerf3 clients can then target to perform bandwidth testing.
 
@@ -186,7 +186,8 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Released 22-MAR-2022
 * Replaced Busybox-httpd web server with NGINX
 * Enabled full dual-stack (IPv4 and IPv6) support
-* Web page converted from a static page to a PHP dynamic page that is updated with each request
+* Web page converted from a static page to a PHP dynamic web page that is updated with each request
+* As part of the new dynamic web page, the border color changed from being set at power-on, to changing with each web request.  This is temporary, and the goal is to change this functionality back in a future version.
 * Added various web session specific information to the web page, including:
   * Client Port
   * X-Forwarded-For
@@ -196,6 +197,12 @@ If you do not see an ```images``` directory, then you are in a develpment branch
   * Host Header
   * Requested URI
   * Current Time (GMT)
+
+
+## Version 2.1
+* In Development
+* ToDo:
+  * Return color functionality so that border color is set during VM start-up, and remains that color until it is powered off.
 
 
 # Credits
