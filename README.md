@@ -97,7 +97,7 @@ TinyVM was built with the following software:
  * [NGINX](https://www.nginx.com/)
  * [iPerf3](https://iperf.fr/)
  * [pcre2](https://www.pcre.org/) (Required by PHP-FPM)
- * [pcre](https://www.pcre.org/) (Required by Open VM Tools)
+ * [pcre](https://www.pcre.org/) (Required by Open-VM-Tools)
  * [curl](https://curl.se/)
  * [wget](https://www.gnu.org/software/wget/)
 
