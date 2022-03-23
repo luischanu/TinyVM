@@ -132,14 +132,11 @@ You can also get help on the above command by entering just the command without 
 
 6. One other enhancement made to TinyVM v1.4 is that the startup screen now indicates the method by which the IPv4 has been assigned: DHCP or static.  The table below indicates the startup message for each method.
 
-<center>
-
 | IPv4 Obtained Via | Startup Message Will State |
 |:------------:|-----------------|
 | DHCP | Your DHCP IPv4 address is: 10.20.30.100 |
 | Static | Your static IPv4 address is: 10.20.30.100 |
 
-</center>
 
 ## IPv6 Support
 TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol version.
