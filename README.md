@@ -11,7 +11,7 @@
                         |  ######/                        
                          \______/                         
 
-                        Version 2.1
+                        Version 2.2
 
 ```
 
@@ -202,6 +202,12 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 ## Version 2.1
 * Released 23-MAR-2022
 * The border color has been reverted back to how it functioned in previous versions.  The border color is now randomly chosen at VM power on, rather than per web request, and continues to be used until the VM is powered off.
+
+## Version 2.2
+* Released 28-MAR-2022
+* Reordered web page elements
+* Added IP addresses being used by TinyVM to web page
+* Added version and IP information to browser tab
 
 
 # Credits
