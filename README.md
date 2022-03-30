@@ -146,7 +146,6 @@ TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol versi
 ## HTTP/HTTPS Support
 TinyVM's web page can now be reached via both HTTP and HTTPS, via either IPv4/IPv6.  Self-Signed Certificates are automatically generated each time TinyVM starts.  TinyVM is configured to support TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3, as well as current Elliptic Curve Diffie-Hellman Ephemeral (ECDHE) ciphers.
 
-
 # TinyVM Download
 
 TinyVM.ova can be found in the ```images``` directory.
@@ -219,6 +218,11 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Some internal scripts were cleaned up
 * Added HTTPS support for both IPv4 and IPv6
 * Server Self-Signed Certificate is automatically recreated each time TinyVM is powered-on or restarted
+
+## Version 2.4
+* Released 30-MAR-2022
+* Enabled HTTP/2 for HTTPS requests.  HTTP connections will continue to use HTTP/1.1.
+
 
 # Credits
 While searching for other similar VMs, [Luis Chanu](https://www.linkedin.com/in/luischanu/) came across a couple of articles that inspired him and gave him some ideas, so he thought he would mention them here.  So, a big thank you goes out to the following people for their articles:
