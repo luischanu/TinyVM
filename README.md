@@ -11,7 +11,7 @@
                         |  ######/                        
                          \______/                         
 
-                        Version 2.2
+                        Version 2.3
 
 ```
 
@@ -26,6 +26,8 @@
   * [Software](#software)
 * [Product Features](#product-features)
   * [Static IPv4 Address Configuration](#static-ipv4-address-configuration)
+  * [IPv6 Support](#ipv6-support)
+  * [HTTP/HTTPS Support](#httphttps-support)
 * [TinyVM Download](#tinyvm-download)
 * [Version History](#version-history)
 * [Credits](#credits)
@@ -141,6 +143,9 @@ You can also get help on the above command by entering just the command without 
 ## IPv6 Support
 TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol version.
 
+## HTTP/HTTPS Support
+TinyVM's web page can now be reached via both HTTP and HTTPS, via either IPv4/IPv6.  Self-Signed Certificates are automatically generated each time TinyVM starts.  TinyVM is configured to support TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3, as well as current Elliptic Curve Diffie-Hellman Ephemeral (ECDHE) ciphers.
+
 
 # TinyVM Download
 
@@ -209,6 +214,11 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Added IP addresses being used by TinyVM to web page
 * Added version and IP information to browser tab
 
+## Version 2.3
+* Released 29-MAR-2022
+* Some internal scripts were cleaned up
+* Added HTTPS support for both IPv4 and IPv6
+* Server Self-Signed Certificate is automatically recreated each time TinyVM is powered-on or restarted
 
 # Credits
 While searching for other similar VMs, [Luis Chanu](https://www.linkedin.com/in/luischanu/) came across a couple of articles that inspired him and gave him some ideas, so he thought he would mention them here.  So, a big thank you goes out to the following people for their articles:
