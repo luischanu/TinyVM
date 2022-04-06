@@ -44,11 +44,13 @@ As part of the VM power-on process, it also automatically starts an iPerf3 serve
 ## TinyVM Web Page
 
 Here are IPv4 and IPv6 examples of the web page that TinyVM generates:
+<br>
 <p align="center">
 <img src="screenshots/TinyVM-Web-Page-IPv4.png">
-<br>
+<br><br><br>
 <img src="screenshots/TinyVM-Web-Page-IPv6.png">
 </p>
+<br>
 
 # VM Details
 
