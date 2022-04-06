@@ -11,7 +11,7 @@
                         |  ######/                        
                          \______/                         
 
-                        Version 2.4
+                        Version 2.5
 
 ```
 
@@ -43,9 +43,11 @@ As part of the VM power-on process, it also automatically starts an iPerf3 serve
 
 ## TinyVM Web Page
 
-Here is an example of the web page that TinyVM generates:
+Here are IPv4 and IPv6 examples of the web page that TinyVM generates:
 <p align="center">
-<img src="screenshots/TinyVM-Web-Page.png">
+<img src="screenshots/TinyVM-Web-Page-IPv4.png">
+<br>
+<img src="screenshots/TinyVM-Web-Page-IPv6.png">
 </p>
 
 # VM Details
@@ -223,8 +225,20 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Released 30-MAR-2022
 * Enabled HTTP/2 for HTTPS requests.  HTTP connections will continue to use HTTP/1.1.
 
+## Version 2.5
+* Released 5-APR-2022
+* Added favicon.ico so that browser tab now shows icon in left, and load balancers no longer create 404 errors in their logs indicating that it couldn't locate ```favicon.ico``` file.  See credits section below for font license and copyright information for font used.
+* When clicking on either the TinyVM logo at the top, or the TinyVM link at the bottom, those links now open new browser tabs rather than over-write the TinyVM web page.
+* Table margins have been modified so that web page fields format promperly regardless of address family being used.
+
 
 # Credits
+
+## Technical Articles/Blogs
 While searching for other similar VMs, [Luis Chanu](https://www.linkedin.com/in/luischanu/) came across a couple of articles that inspired him and gave him some ideas, so he thought he would mention them here.  So, a big thank you goes out to the following people for their articles:
 * [Maciej Jedrzejczyk](https://cloudarchitectblog.wordpress.com/about/) at [cloudarchitectblog](https://cloudarchitectblog.wordpress.com) for his [How to build your own yVM: step-by-step process](https://cloudarchitectblog.wordpress.com/2015/11/11/how-to-build-your-own-yvm-step-by-step-process/) article.
 * [Sheng Chen](https://route179.dev/about/) at [Route179](https://route179.dev/) for his [Create a Tiny Core Linux VM Template for vSphere Lab environment](https://route179.dev/2021/02/21/create-a-tiny-core-linux-vm-template-for-vsphere-lab-environment/) article.
+
+## Font License & Copyright
+
+The [Staatliches](https://github.com/googlefonts/staatliches) font was used to create the web site icon that shows up in the web browser tab.  Although the font is not used anywhere else in the application, in keeping with the conditions and spirit of the SIL Open Font License, you can find the full SIL Open Font License and Copyright notice [HERE](http://scripts.sil.org/OFL).
