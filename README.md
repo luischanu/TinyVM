@@ -11,7 +11,7 @@
                         |  ######/                        
                          \______/                         
 
-                        Version 2.5
+                        Version 2.6
 
 ```
 
@@ -149,6 +149,7 @@ TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol versi
 ## HTTP/HTTPS Support
 TinyVM's web page can now be reached via both HTTP and HTTPS, via either IPv4/IPv6.  Self-Signed Certificates are automatically generated each time TinyVM starts.  TinyVM is configured to support TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3, as well as current Elliptic Curve Diffie-Hellman Ephemeral (ECDHE) ciphers.
 
+
 # TinyVM Download
 
 TinyVM.ova can be found in the ```images``` directory.
@@ -232,6 +233,10 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * When clicking on either the TinyVM logo at the top, or the TinyVM link at the bottom, those links now open new browser tabs rather than over-write the TinyVM web page.
 * Table margins have been modified so that web page fields format promperly regardless of address family being used.
 
+## Version 2.6
+* Released 8-APR-2022
+* To support active health checking, added /health.html web page which returns "SUCCESS"
+* Added local files of various sizes which can be downloaded by the user to perform basic download speed tests.  Currently, the the following sizes are available: 1KB, 10KB, 100KB, 500KB, 1MB, and 5MB.
 
 # Credits
 
