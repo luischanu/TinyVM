@@ -11,10 +11,11 @@
                         |  ######/                        
                          \______/                         
 
-                        Version 2.6
+                        Version 2.7
 
 ```
 
+<br>
 
 # Table of Contents
 
@@ -30,13 +31,15 @@
   * [HTTP/HTTPS Support](#httphttps-support)
 * [TinyVM Download](#tinyvm-download)
 * [Version History](#version-history)
+* [Known Issues](#known-issues)
 * [Credits](#credits)
 
+<br>
 
 # Description
 TinyVM was born out of a desire by [Luis Chanu](https://www.linkedin.com/in/luischanu/) to have a portable VM with a small resource footprint that could be used to easily test/verify load balancing and assist in basic network bandwidth testing using [iPerf3](https://iperf.fr/).  Additionally, as a co-developer of [SDDC.Lab](https://github.com/rutgerblom/SDDC.Lab), Luis thought TinyVM could serve to demonstrate the WorkloadVM functionality that he added to that project.
 
-TinyVM is based on [Tiny Core Linux](http://www.tinycorelinux.net/), and obtains its IPv4 address via DHCP.  It includes a http web server that displays connection oriented information on it's web page that has a border color that is randomly chosen at each VM startup. This random color helps aid the user's identification of the various VMs when load balance testing is being performed.
+TinyVM is based on [Tiny Core Linux](http://www.tinycorelinux.net/), and obtains its IPv4 address via DHCP, and it's IPv6 address via Auto-Configuration.  It includes a http web server that displays connection oriented information on it's web page that has a border color which is randomly chosen at each VM startup. This random color helps aid the user's identification of the various VMs when load balance testing is being performed.  The web page also displays all of the IPv4 and IPv6 addresses currently used by TinyVM.
 
 As part of the VM power-on process, it also automatically starts an iPerf3 server, which iPerf3 clients can then target to perform bandwidth testing.
 
@@ -50,6 +53,8 @@ Here are examples of the web page that TinyVM generates for IPv4 and IPv6 reques
 <br><br>
 <img src="screenshots/TinyVM-Web-Page-IPv6.png" alt="TinyVM IPv6 Screenshot">
 </p>
+
+<br>
 
 # VM Details
 
@@ -106,6 +111,7 @@ TinyVM was built with the following software:
  * [curl](https://curl.se/)
  * [wget](https://www.gnu.org/software/wget/)
 
+<br>
 
 # Product Features
 
@@ -133,15 +139,7 @@ You can also get help on the above command by entering just the command without 
 ```
 4. Once the static IPv4 address is applied, you will see a message indicating that ```TinyVM WILL RESTART IN 5 SECONDS```, at which point TinyVM will restart.
 
-5. TinyVM is now configured to use a static IPv4 address.  This address will be persistent, and survive across reboots/restarts.
-
-6. One other enhancement made to TinyVM v1.4 is that the startup screen now indicates the method by which the IPv4 has been assigned: DHCP or static.  The table below indicates the startup message for each method.
-
-| IPv4 Obtained Via | Startup Message Will State |
-|:------------:|-----------------|
-| DHCP | Your DHCP IPv4 address is: 10.20.30.100 |
-| Static | Your static IPv4 address is: 10.20.30.100 |
-
+5. TinyVM is now configured to use a static IPv4 address.  This address will be persistent, and survive across reboots/restarts.  The login banner page will also now indiciate that the IPv4 address is statically configured.
 
 ## IPv6 Support
 TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol version.
@@ -149,6 +147,32 @@ TinyVM is now dual-stacked (IPv4/IPv6), and responds to either IP protocol versi
 ## HTTP/HTTPS Support
 TinyVM's web page can now be reached via both HTTP and HTTPS, via either IPv4/IPv6.  Self-Signed Certificates are automatically generated each time TinyVM starts.  TinyVM is configured to support TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3, as well as current Elliptic Curve Diffie-Hellman Ephemeral (ECDHE) ciphers.
 
+## Static IPv6 Address Configuration
+
+By default, TinyVM obtains it's IPv6 address via Auto-Configuration.  However, you can now assign a static IPv6 address to TinyVM.  Should you assign a static IPv6 address to TinyVM, and later decide you want to revert it back to using Auto-Configuration, you will need to redeploy it from the OVA file as there is no "undo" to this feature.  Althought IPv6 does support the assignment of multiple IPv6 addresses to an interface, it currently is not supported by TinyVM.  Only the most recent static IPv6 address assigned will be used.
+
+To assign an IPv6 address to TinyVM, follow these steps:
+
+1. Deploy TinyVM from the OVA file.
+2. Login to TinyVM from either the console or via a SSH session.
+3. To assign the static IPv6 address, run the following command:
+```
+sudo /opt/set-ipv6-address.sh <IPv6Address> <PrefixLength> <DefaultGateway> <DNSServer> <DNSDomain>
+
+  where:
+      <IPv6Address>     is the static IPv6 address to set the eth0 interface to
+      <PrefixLength>    is the IPv6 subnet prefix length without the leading '/' (i.e. 64)
+      <DefaultGateway>  is the IPv6 link-local gateway address that should be used for all off-net destinations
+      <DNSServer>       is the IPv6 address of the DNS server to use to resolve names
+      <DNSDomain>       is the default DNS search domain to use
+
+You can also get help on the above command by entering just the command without any arguments.
+```
+4. Once the static IPv6 address is applied, you will see a message indicating that ```TinyVM WILL RESTART IN 5 SECONDS```, at which point TinyVM will restart.
+
+5. TinyVM is now configured to use a static IPv4 address.  This address will be persistent, and survive across reboots/restarts.  The login banner page will also now indiciate that the IPv6 address is statically configured.
+
+<br>
 
 # TinyVM Download
 
@@ -156,6 +180,7 @@ TinyVM.ova can be found in the ```images``` directory.
 
 If you do not see an ```images``` directory, then you are in a develpment branch, and the OVA is not yet available.  Please look at a previous branch version for a released OVA.
 
+<br>
 
 # Version History
 
@@ -237,6 +262,20 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 * Released 8-APR-2022
 * To support active health checking, added /health.html web page which returns "SUCCESS"
 * Added local files of various sizes which can be downloaded by the user to perform basic download speed tests.  Currently, the the following sizes are available: 1KB, 10KB, 100KB, 500KB, 1MB, and 5MB.
+
+## Version 2.7
+* Released 21-APR-2022
+* Modified login banner to show the dynamic/static configuration status of each IP address family.
+* Modified how the login banner displays the various IPv4 and IPv6 addresses in use by TinyVM.
+* Added the ability to statically assign an IPv6 Global Unicast address to TinyVM.
+
+<br>
+
+# Known Issues
+
+1. When statically assigning an IPv6 address to TinyVM, IPv6 Auto-Configuration is not disabled, and the Default Gateway is still learned via the IPv6 Router Advertisement from the gateway.  However, the statically configured gateway is still used over the dynamically learned Default Gateway as it's assigned a lower administrative distance.  This can be visible with the following command: ```route -A inet6```
+
+<br>
 
 # Credits
 
