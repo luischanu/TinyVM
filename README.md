@@ -273,7 +273,7 @@ If you do not see an ```images``` directory, then you are in a develpment branch
 
 # Known Issues
 
-* When statically assigning an IPv6 address, IPv6 Auto-Configuration is not disabled, and the Default Gateway is still learned via the IPv6 Router Advertisement from the gateway.  However, the statically configured gateway is still used over the dynamically learned Default Gateway as it's assigned a lower administrative distance.  This can be visible with the following command: ```route -A inet6```
+* When statically assigning an IPv6 address, IPv6 Auto-Configuration is not disabled, and the default gateway is still learned via the IPv6 Router Advertisement from the gateway.  However, the statically configured gateway is still used over the dynamically learned default gateway as it's assigned a lower administrative distance.  This can be observed with the following command: ```route -A inet6```
 
 <br>
 
