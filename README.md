@@ -58,7 +58,7 @@ Here are examples of the web page that TinyVM generates for IPv4 and IPv6 reques
 
 # VM Details
 
-TinyVM is built in a vSphere environment, and exported to an [Open Virtualization Format](https://en.wikipedia.org/wiki/Open_Virtualization_Format), and packaged in an [Open Virtual Appliance](https://en.wikipedia.org/wiki/Open_Virtualization_Format), or OVA, package.
+TinyVM is built in a vSphere environment, exported to an [Open Virtualization Format](https://en.wikipedia.org/wiki/Open_Virtualization_Format), and packaged in an [Open Virtual Appliance](https://en.wikipedia.org/wiki/Open_Virtualization_Format), or OVA, file.
 
 
 ## Default User Credentials
